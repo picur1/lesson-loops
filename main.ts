@@ -11,6 +11,28 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
     basic.clearScreen()
 })
+input.onButtonPressed(Button.AB, function () {
+    for (let index = 0; index <= 4; index++) {
+        for (let INDEX2 = 0; INDEX2 <= 4; INDEX2++) {
+            led.plot(INDEX2, index)
+            basic.pause(300)
+        }
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    for (let index = 0; index <= 3; index++) {
+        music.playTone(220 + index * 220, music.beat(BeatFraction.Quarter))
+        SOR(index)
+        basic.pause(300)
+    }
+    basic.pause(1000)
+    basic.clearScreen()
+})
+function SOR (num: number) {
+    for (let index = 0; index <= 4; index++) {
+        led.plot(index, num)
+    }
+}
 basic.forever(function () {
 	
 })
